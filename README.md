@@ -28,11 +28,16 @@ Follow these steps to set up and run the application:
    ```bash
    git clone https://github.com/19rishabh/RAG.git
    
-Navigate to the repository directory:
+2. **Navigate to the repository directory**:
+```
 cd RAG
+```
 
-Install dependencies (make sure you have Python installed):
+3. **Install dependencies (make sure you have Python installed)**
 
-Run the application:
+4. **Run the application**:
+```
 streamlit run app.py
+```
+
 Open the URL displayed in the terminal (typically http://localhost:8501) in your web browser to access the app.
