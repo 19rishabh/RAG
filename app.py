@@ -55,7 +55,7 @@ class OptimizedRAGApp:
         # Initialize embeddings and vectorstore only if documents are loaded
         if docs:
             # Use a faster, smaller embeddings model
-            self.embeddings_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+            self.embeddings_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L12-v2")
             
             # Use more efficient text splitting
             text_splitter = SemanticChunker(embeddings=self.embeddings_model)
