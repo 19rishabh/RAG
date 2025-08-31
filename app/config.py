@@ -18,7 +18,8 @@ class Settings(BaseSettings):
     OLLAMA_URL: str = os.getenv("OLLAMA_URL", "http://localhost:11434")  # if using HTTP
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1")
     LOG_LEVEL: str = "INFO"
-
+    PERFORMANCE_LOG_PATH: str = str(BASE / "data" / "performance.log")
+    
     class Config:
         env_file = BASE / ".env"
         env_file_encoding = 'utf-8'
