@@ -1,0 +1,17 @@
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual environment
+rag_env/
+
+# VSCode settings (optional)
+.vscode/
+
+# Data files that can be regenerated
+data/faiss.index
+data/metadata.npy
+
+#environment variables
+.env
