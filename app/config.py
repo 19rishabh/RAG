@@ -9,10 +9,10 @@ class Settings(BaseSettings):
     DATA_DIR: str = str(BASE / "data")
     DOCS_DIR: str = str(BASE / "docs")
     EMB_MODEL: str = "sentence-transformers/all-MiniLM-L12-v2"
-    CHUNK_SIZE: int = 800
-    CHUNK_OVERLAP: int = 120
+    CHUNK_SIZE: int = 700
+    CHUNK_OVERLAP: int = 100
     TOP_K: int = 7
-    FINAL_K: int = 3
+    FINAL_K: int = 5
     FAISS_INDEX_PATH: str = str(BASE / "data" / "faiss.index")
     METADATA_PATH: str = str(BASE / "data" / "metadata.npy")
     OLLAMA_URL: str = os.getenv("OLLAMA_URL", "http://localhost:11434")  # if using HTTP
