@@ -1,24 +1,24 @@
-# Use an official Python runtime as a parent image
-FROM python:3.11-slim
+# Use a slim Python image
+FROM python:3.12-slim
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies that might be needed by Python packages
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the requirements file into the container
+# Copy requirements and install Python packages
 COPY requirements.txt .
-# Install needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
+# Copy the application code
 COPY . .
 
-# NLTK downloader for the 'punkt' tokenizer
+# Download NLTK punkt tokenizer
 RUN python -m nltk.downloader punkt
 
-# The container will run the command specified in docker-compose.yml
+# Default command (can be overridden by docker-compose)
+CMD ["bash"]
 

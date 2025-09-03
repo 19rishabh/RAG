@@ -1,9 +1,10 @@
-version: '3.8'
-
 services:
   ollama:
     image: ollama/ollama:latest
-    container_name: ollama_service
+    container_name: ollama
+    environment:
+      OLLAMA_INTEL_GPU: "false"
+      OLLAMA_ALLOW_CPU: "true"
     volumes:
       - ollama_data:/root/.ollama
     ports:
@@ -12,7 +13,7 @@ services:
 
   backend:
     build: .
-    container_name: rag_backend
+    container_name: backend
     command: uvicorn api:app --host 0.0.0.0 --port 8000
     volumes:
       - ./docs:/app/docs
@@ -22,10 +23,12 @@ services:
     depends_on:
       - ollama
     restart: unless-stopped
+    environment:
+      GOOGLE_API_KEY: "AIzaSyASjRPSrBbtJLKMGrjDTSettxAvlTzcGB0"
 
   frontend:
     build: .
-    container_name: rag_frontend
+    container_name: frontend
     command: streamlit run frontend.py --server.port 8501 --server.address 0.0.0.0
     ports:
       - "8501:8501"
