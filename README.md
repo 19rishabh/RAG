@@ -1,4 +1,4 @@
-# 📚 AskMyDocs – Local RAG with Ollama + huggingface
+# 📚 AskMyDocs – Local RAG with Ollama + Huggingface
 
 AskMyDocs is a **Retrieval-Augmented Generation (RAG) system** that lets you upload your documents (PDFs, text, etc.) and ask natural language questions about them. It uses:  
 - **FastAPI** → Backend for embeddings, FAISS index, and RAG pipeline  
@@ -6,21 +6,21 @@ AskMyDocs is a **Retrieval-Augmented Generation (RAG) system** that lets you upl
 - **Ollama** → Local LLM inference (e.g., Llama 3)  
 
 ## 🚀 Features
-- Supports multiple types (PDF, TXT, DOCX)  
+- Supports **multiple types** (PDF, TXT, DOCX)  
 - Recursive Text chunking + embeddings with **sentence-transformers**  
 - Vector search via **FAISS**  
 - Response generation with **Llama3.1 (via Ollama)**  
-- Dockerized setup (backend, frontend, Ollama)  
+- **Dockerized** setup (backend, frontend, Ollama)  
 
 ## 🛠️ Prerequisites
 - Docker installed    
-- At least **8GB free disk space** 
+- At least 8GB free disk space
 
 ## ⚙️ Setup & Run  
 
 ### 1️⃣ Clone repo
 ```
-git clone https://github.com/<your-username>/askmydocs.git
+git clone https://github.com/19rishabh/RAG.git
 cd askmydocs
 ```
 ### 2️⃣ Configure in .env:
