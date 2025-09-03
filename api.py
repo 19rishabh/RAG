@@ -2,12 +2,12 @@ from fastapi import FastAPI, UploadFile, File, BackgroundTasks
 from pydantic import BaseModel
 from app.rag import answer_query
 from app.config import settings
-from scripts.build_index import build  # Import the build function
+from scripts.build_index import build  
 import uvicorn
 import os
 import shutil
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 app = FastAPI(title="AskmyDocs")
 
@@ -54,10 +54,11 @@ def upload_and_index(background_tasks: BackgroundTasks, files: List[UploadFile] 
 
 class Query(BaseModel):
     q: str
+    provider: Optional[str] = None
 
 @app.post("/ask")
 def ask(q: Query):
-    return answer_query(q.q)
+    return answer_query(q.q, provider=q.provider)
 
 if __name__ == "__main__":
     uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=False)
