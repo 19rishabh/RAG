@@ -9,7 +9,8 @@ AskMyDocs is a **Retrieval-Augmented Generation (RAG) system** that lets you upl
 - Supports **multiple types** (PDF, TXT, DOCX)  
 - Recursive Text chunking + embeddings with **sentence-transformers**  
 - Vector search via **FAISS**  
-- Response generation with **Llama3.1 (via Ollama)**  
+- Response generation with **Llama3.1 (via Ollama)**
+- Stores latency **metrics** 
 - **Dockerized** setup (backend, frontend, Ollama)  
 
 ## 🛠️ Prerequisites
