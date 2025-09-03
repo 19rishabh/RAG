@@ -25,6 +25,8 @@ services:
     restart: unless-stopped
     environment:
       GOOGLE_API_KEY: "AIzaSyASjRPSrBbtJLKMGrjDTSettxAvlTzcGB0"
+      OLLAMA_MODEL: "llama3.1:8b"   
+      OLLAMA_URL: "http://ollama:11434"
 
   frontend:
     build: .
