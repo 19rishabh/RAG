@@ -19,7 +19,11 @@ class Settings(BaseSettings):
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1")
     LOG_LEVEL: str = "INFO"
     PERFORMANCE_LOG_PATH: str = str(BASE / "data" / "performance.log")
-    
+
+    LLM_PROVIDER: str = "ollama"
+    GOOGLE_API_KEY: str = ""
+    DEPLOYED: bool = False
+
     class Config:
         env_file = BASE / ".env"
         env_file_encoding = 'utf-8'
