@@ -29,7 +29,12 @@ LLM_PROVIDER="ollama"
 GOOGLE_API_KEY="YOUR_KEY"
 DEPLOYED="false"
 ```
-### 3️⃣ Build image
+### 3️⃣ Pull model into Ollama (One-time) 
+If Ollama starts but no models are available, pull one manually:
+```
+docker exec -it ollama ollama pull llama3.1:8b
+```
+### 4️⃣ Build image
 ```
 docker compose up --build
 ```
