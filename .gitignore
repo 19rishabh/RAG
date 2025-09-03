@@ -10,8 +10,10 @@ rag_env/
 .vscode/
 
 # Data files that can be regenerated
-data/faiss.index
-data/metadata.npy
+data/
+
+# Documents
+docs/
 
 #environment variables
 .env

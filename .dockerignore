@@ -1,0 +1,26 @@
+
+Python cache files
+pycache/
+*.pyc
+
+Python virtual environment
+rag_env/
+
+IDE and editor configuration
+.vscode/
+
+Do not copy the local data and docs, as they are handled by volumes
+/data/
+/docs/
+
+Environment variables file
+.env
+
+Git directory
+.git/
+
+
+
+
+
+

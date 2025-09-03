@@ -14,7 +14,7 @@ st.title("AskMyDocs❓")
 st.markdown("Upload your documents and ask questions about them!")
 
 # --- API Configuration ---
-FASTAPI_URL = "http://localhost:8000"
+FASTAPI_URL = os.getenv("FASTAPI_URL", "http://backend:8000")  # if using docker
 
 # --- Sidebar ---
 with st.sidebar:
