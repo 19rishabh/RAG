@@ -35,9 +35,10 @@ DEPLOYED="false"
 ```
 docker compose up --build
 ```
-###  Pull model into Ollama (One-time) 
-The first time you build the image you need to pull the model manually:
+### 4️⃣ Pull model into Ollama (One-time setup) 
+The first time you build the image you need to pull the model manually and restart:
 ```
 docker compose exec ollama ollama pull llama3.1:8b
+docker compose restart backend
 ```
 ### Now open: http://localhost:8501
