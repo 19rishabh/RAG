@@ -1,21 +1,28 @@
 # 📚 AskMyDocs – Local RAG with Ollama + Huggingface
 
-AskMyDocs is a **Retrieval-Augmented Generation (RAG) system** that lets you upload your documents (PDFs, text, etc.) and ask natural language questions about them. It uses:  
+AskMyDocs is a powerful, self-contained **Retrieval-Augmented Generation (RAG)** application that allows you to chat with your own documents. It runs entirely on your local machine, ensuring your data remains completely private.
+It uses:  
 - **FastAPI** → Backend for embeddings, FAISS index, and RAG pipeline  
 - **Streamlit** → Frontend for uploading docs and chatting with them  
 - **Ollama** → Local LLM inference (e.g., Llama 3)  
+- **Gemini** → Cloud LLM inference
+- **Sentence Transformers** → Powerful Embeddings
+- **FAISS** → Vector indexing
+- **Docker** → Containerization
 
 ## 🚀 Features
-- Supports **multiple types** (PDF, TXT, DOCX)  
-- Recursive Text chunking + embeddings with **sentence-transformers**  
-- Vector search via **FAISS**  
-- Response generation with **Llama3.1 (via Ollama)**
-- Stores latency **metrics**
-- Works completely **offline**
-- **Dockerized** setup (backend, frontend, Ollama)  
+ 
+- **Local & Private**: Your documents and questions never leave your machine. The entire RAG pipeline runs locally and offline.
+- **Interactive UI**: A simple and intuitive web interface built with Streamlit for uploading documents and asking questions.
+- **Live Document Upload**: Upload your own PDF, DOCX, or TXT files directly through the web interface. The knowledge base is updated on the fly.
+- **High-Quality Embeddings**: Uses sentence-transformers to generate state-of-the-art vector embeddings for your documents.
+- **Fast Vector Search**: Utilizes FAISS for efficient and fast retrieval of relevant document chunks.
+- **Powerful Local LLM**: Powered by Ollama and the Llama 3.1 model by default, providing high-quality answers without an internet connection.
+- **Optional Cloud LLM Support**: Easily switch to the powerful Google Gemini API for cloud-based inference, perfect for deployment or lighter local setups.
+- **Containerized with Docker**: You can get the applicaton running with a single command.
 
 ## 🛠️ Prerequisites
-- Docker installed    
+- Docker installed and running    
 - At least 8GB free disk space
 
 ## ⚙️ Setup & Run  
@@ -25,13 +32,14 @@ AskMyDocs is a **Retrieval-Augmented Generation (RAG) system** that lets you upl
 git clone https://github.com/19rishabh/RAG.git
 cd askmydocs
 ```
-### 2️⃣ Configure in .env:
+### 2️⃣ Configure .env in root off folder:
 ```
 LLM_PROVIDER="ollama"
 GOOGLE_API_KEY="YOUR_KEY"
 DEPLOYED="false"
 ```
 ### 3️⃣ Build image
+The first time you run this command, it will take several minutes.
 ```
 docker compose up --build
 ```
